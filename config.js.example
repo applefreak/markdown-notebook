@@ -1,0 +1,3 @@
+module.exports = {
+  dbUri: 'mongodb://YOUR_MONGODB_URI_HERE'
+}
