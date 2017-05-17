@@ -13,8 +13,8 @@ module.exports = {
     Note.findOne({uuid: req.params.uuid})
     .then((note) => {
       if (!note) return Promise.reject(new Error('Record not found!'))
-      const {md_content, created_at, last_modifid} = note
-      res.json({md_content, created_at, last_modifid})
+      const {md_content, created_at, last_modifid, uuid} = note
+      res.json({md_content, created_at, last_modifid, uuid})
     })
     .catch(err => res.json({hasError: true, message: err.message}))
   },

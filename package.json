@@ -5,14 +5,28 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "pack": "webpack -w --progress --color",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Po-Yu Chen",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "lodash": "^4.17.4",
     "mongoose": "^4.9.9",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^2.5.1"
   }
 }
