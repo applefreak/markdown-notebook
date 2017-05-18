@@ -13,8 +13,8 @@ module.exports = {
     Note.findOne({uuid: req.params.uuid})
     .then((note) => {
       if (!note) return Promise.reject(new Error('Record not found!'))
-      const {md_content, created_at, last_modifid, uuid} = note
-      res.json({md_content, created_at, last_modifid, uuid})
+      const {md_content, created_at, last_modified, uuid} = note
+      res.json({md_content, created_at, last_modified, uuid})
     })
     .catch(err => res.json({hasError: true, message: err.message}))
   },
@@ -32,11 +32,11 @@ module.exports = {
 
       const newNote = Object.assign(note, {
         md_content: md_content,
-        last_modifid: now
+        last_modified: now
       })
       return Note.findOneAndUpdate({ uuid }, newNote)
     }).then(note => {
-      res.json({hasError: false, last_modifid: (new Date(now)).toISOString()})
+      res.json({hasError: false, last_modified: (new Date(now)).toISOString()})
     }).catch(err => {
       res.json({hasError: true, message: err.message})
     })

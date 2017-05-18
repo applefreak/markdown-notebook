@@ -1,0 +1,20 @@
+.notes-list {
+  margin: 50px;
+}
+
+.single-note {
+  width: 80vw;
+  min-height: 40vh;
+}
+
+.editor {
+  width: 80vw;
+}
+
+.btn-group {
+  margin: 50px;
+
+  .margin-hack {
+    margin-left: 30px;
+  }
+}

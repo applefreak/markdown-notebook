@@ -25,10 +25,8 @@ class ViewNote extends Component {
     let { data } = this.state
     return (
       <div>
-        <h1>Viewing a Note</h1>
-        <Link to='/new'>Create New Note!</Link>
-        <p>Showing note for: {params.uuid}</p>
-        <Viewer content={data.md_content} />
+        <h1 className='title has-text-centered'>{params.uuid}</h1>
+        <Viewer content={data} />
         <NotesList />
       </div>
     )

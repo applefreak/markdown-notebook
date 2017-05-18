@@ -11,7 +11,7 @@ const notesSchema = new Schema({
   md_content: {type: String, required: true},
   uuid: {type: String, default: _gen6id},
   created_at: {type: Date, default: Date.now},
-  last_modifid: {type: Date, default: null},
+  last_modified: {type: Date, default: null},
   edit_key: {type: String, default: _gen10id}
 })
 

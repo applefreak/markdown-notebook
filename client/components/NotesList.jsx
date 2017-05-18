@@ -7,7 +7,6 @@ class NotesList extends Component {
   constructor () {
     super()
 
-    // this.state = this.getLocalUUID()
     this.state = Object.assign(utils.getLocalUUID(), {notesContent: []})
   }
 
@@ -23,17 +22,18 @@ class NotesList extends Component {
   }
 
   render () {
-    const notesListItem = this.state.notesContent.map((note, i) => (
-      <li key={i}>
+    let notesListItem = this.state.notesContent.map((note, i) => (
+      <div className='box' key={i}>
         <Link to={`/${note.uuid}`}>{note.uuid}</Link>
-        <Link to={`/edit/${note.uuid}`}> Edit</Link>
-      </li>
+        <Link className='button is-small is-pulled-right' to={`/edit/${note.uuid}`}>Edit</Link>
+      </div>
     ))
+    if (!notesListItem.length) notesListItem = <i className='has-text-centered title is-4'>No Content Yet...</i>
 
     return (
-      <ul>
+      <div className='notes-list has-text-centered'>
         {notesListItem}
-      </ul>
+      </div>
     )
   }
 }

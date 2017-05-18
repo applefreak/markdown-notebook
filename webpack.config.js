@@ -16,12 +16,12 @@ module.exports = {
         options: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'postcss-loader']
       }
-      // {
-      //   test: /\.scss$/,
-      //   exclude: /node_modules/,
-      //   use: ['style-loader', 'css-loader', 'sass-loader']
-      // }
     ]
   },
   // devServer: {
